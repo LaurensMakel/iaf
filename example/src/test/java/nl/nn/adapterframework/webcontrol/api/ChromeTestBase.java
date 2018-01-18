@@ -20,7 +20,7 @@ public abstract class ChromeTestBase {
 
 	@Before
 	public void initDriver() throws Exception {
-		// Set default settings
+		// Set default settings!
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
 		caps.setCapability("platform", "Windows");
 		caps.setCapability("version", "43.0");
