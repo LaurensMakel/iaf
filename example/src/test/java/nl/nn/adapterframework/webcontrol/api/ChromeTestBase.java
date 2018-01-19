@@ -30,7 +30,7 @@ public abstract class ChromeTestBase {
 		}
 		
 		driver = new RemoteWebDriver(new URL(URL), caps);
-		driver.get("http://localhost:8080/iaf/gui/#/status");
+		driver.get("http://127.0.0.1:8080/iaf/gui/#/status");
 		
 		System.out.println("Source of webpage : " + driver.getPageSource() );
 	}
