@@ -16,3 +16,7 @@ notifications:
   email:
     - ibistravis@meeuw.org
     - travis@ibissource.org
+addons:
+   sauce_connect:
+     username: "Baswat"
+     access_key: "d835004c-97a1-4e52-b63f-daa5b1d3d3fd" 
