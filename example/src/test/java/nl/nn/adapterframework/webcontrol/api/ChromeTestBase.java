@@ -25,6 +25,10 @@ public abstract class ChromeTestBase {
 		caps.setCapability("platform", "Windows");
 		caps.setCapability("version", "43.0");
 		
+		if( System.getProperty("TRAVIS_JOB_NUMBER") != null ){
+			caps.setCapability("tunnel-identifier", System.getProperty("TRAVIS_JOB_NUMBER"));
+		}
+		
 		driver = new RemoteWebDriver(new URL(URL), caps);
 		driver.get("http://localhost:8080/iaf/gui/#/status");
 		
