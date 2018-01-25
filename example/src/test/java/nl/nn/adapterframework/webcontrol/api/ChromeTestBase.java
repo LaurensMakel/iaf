@@ -43,7 +43,7 @@ public abstract class ChromeTestBase {
 	}
 	
 	public void waitUntilVisible(By by) throws Exception {
-		waitUntilVisible(by, 10);
+		waitUntilVisible(by, 30);
 	}
 		
 	public void waitUntilVisible(By by, int timeout) throws Exception {
