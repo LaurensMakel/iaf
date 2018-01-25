@@ -16,7 +16,7 @@ public class ChromeTestIT extends ChromeTestBase {
 
 	public ChromeTestIT() throws Exception {
 		navigations.put("Configurations", "#side-menu li:nth-child(3) a");
-		navigations.put("Logging", "#side-menu li:nth-child(4) a");
+		navigations.put("Logging", "#side-menu li:nth-child(5) a");
 	}
 	
 	@Test
