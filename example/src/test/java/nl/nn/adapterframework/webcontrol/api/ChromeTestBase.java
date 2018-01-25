@@ -21,7 +21,7 @@ public abstract class ChromeTestBase {
 	private static final String AUTOMATE_KEY = "d835004c-97a1-4e52-b63f-daa5b1d3d3fd";
 	private static String URL = "https://"+ USERNAME + ":" + AUTOMATE_KEY +  "@ondemand.saucelabs.com:443/wd/hub";
 
-	@BeforeClass
+	@Before
 	public void initDriver() throws Exception {
 		// Set default settings!
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
@@ -37,7 +37,7 @@ public abstract class ChromeTestBase {
 		driver.get("http://127.0.0.1:8080/iaf/gui/#/status");
 	}
 	
-	@AfterClass
+	@After
 	public void quit() throws Exception {
 		driver.quit();
 	}
