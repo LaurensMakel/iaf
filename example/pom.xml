@@ -113,7 +113,7 @@
         <executions>
 	        <execution>
 	            <id>start-jetty</id>
-	            <phase>pre-unit-test</phase>
+	            <phase>pre-integration-test</phase>
 	            <goals>
 	                <goal>start</goal>
 	            </goals>
@@ -124,38 +124,38 @@
 	        </execution>
 	        <execution>
 	            <id>stop-jetty</id>
-	            <phase>post-unit-test</phase>
+	            <phase>post-integration-test</phase>
 	            <goals>
 	                <goal>stop</goal>
 	            </goals>
 	        </execution>
 	    </executions>
       </plugin>
-<!--        <plugin> -->
-<!--          <groupId>com.saucelabs.maven.plugin</groupId> -->
-<!--         <artifactId>sauce-connect-plugin</artifactId> -->
-<!--         <version>2.1.23</version> -->
-<!--         <configuration> -->
-<!--             <sauceUsername>Baswat</sauceUsername> -->
-<!--             <sauceAccessKey>d835004c-97a1-4e52-b63f-daa5b1d3d3fd</sauceAccessKey> -->
-<!--         </configuration> -->
-<!--         <executions> -->
-<!--             <execution> -->
-<!--                 <id>start-sauceconnct</id> -->
-<!--                 <phase>pre-integration-test</phase> -->
-<!--                 <goals> -->
-<!--                     <goal>start-sauceconnect</goal> -->
-<!--                 </goals> -->
-<!--             </execution> -->
-<!--             <execution> -->
-<!--                 <id>stop-sauceconnect</id> -->
-<!--                 <phase>post-integration-test</phase> -->
-<!--                 <goals> -->
-<!--                     <goal>stop-sauceconnect</goal> -->
-<!--                 </goals> -->
-<!--             </execution> -->
-<!--         </executions> -->
-<!--     </plugin> -->
+       <plugin>
+         <groupId>com.saucelabs.maven.plugin</groupId>
+        <artifactId>sauce-connect-plugin</artifactId>
+        <version>2.1.23</version>
+        <configuration>
+            <sauceUsername>Baswat</sauceUsername>
+            <sauceAccessKey>d835004c-97a1-4e52-b63f-daa5b1d3d3fd</sauceAccessKey>
+        </configuration>
+        <executions>
+            <execution>
+                <id>start-sauceconnct</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                    <goal>start-sauceconnect</goal>
+                </goals>
+            </execution>
+            <execution>
+                <id>stop-sauceconnect</id>
+                <phase>post-integration-test</phase>
+                <goals>
+                    <goal>stop-sauceconnect</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
     </plugins>
   </build>
 
