@@ -49,4 +49,13 @@ public abstract class ChromeTestBase {
 	public void waitUntilVisible(By by, int timeout) throws Exception {
 		new WebDriverWait(driver, timeout).until( ExpectedConditions.visibilityOfElementLocated(by) );
 	}
+	
+	public void waitAndClick(By by) throws Exception {
+		waitAndClick(by, defaultTimeout);
+	}
+	
+	public void waitAndClick(By by, int timeout) throws Exception {
+		waitUntilVisible(by, timeout);
+		driver.findElement(by).click();
+	}
 }
