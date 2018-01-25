@@ -15,7 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class ChromeTestBase {
 	public static WebDriver driver;
-	private String tunnelId = System.getenv("TRAVIS_JOB_NUMBER"); 
+	public static Integer defaultTimeout = 30;
+	private static String tunnelId = System.getenv("TRAVIS_JOB_NUMBER"); 
 	private static final String USERNAME = "Baswat";
 	private static final String AUTOMATE_KEY = "d835004c-97a1-4e52-b63f-daa5b1d3d3fd";
 	private static String URL = "https://"+ USERNAME + ":" + AUTOMATE_KEY +  "@ondemand.saucelabs.com:443/wd/hub";
@@ -34,8 +35,6 @@ public abstract class ChromeTestBase {
 		
 		driver = new RemoteWebDriver(new URL(URL), caps);
 		driver.get("http://127.0.0.1:8080/iaf/gui/#/status");
-		
-		System.out.println("Source of webpage : " + driver.getPageSource() );
 	}
 	
 	@AfterClass
@@ -44,7 +43,7 @@ public abstract class ChromeTestBase {
 	}
 	
 	public void waitUntilVisible(By by) throws Exception {
-		waitUntilVisible(by, 30);
+		waitUntilVisible(by, defaultTimeout);
 	}
 		
 	public void waitUntilVisible(By by, int timeout) throws Exception {
