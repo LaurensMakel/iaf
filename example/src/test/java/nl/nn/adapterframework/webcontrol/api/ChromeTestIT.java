@@ -15,8 +15,8 @@ public class ChromeTestIT extends ChromeTestBase {
 	public static Map<String, String> navigations = new HashMap<String, String>();
 
 	public ChromeTestIT() throws Exception {
-		navigations.put("Configurations", "#side-menu li:nth-child(3) a");
-		navigations.put("Logging", "#side-menu li:nth-child(5) a");
+		navigations.put("Configurations", "ul#side-menu li:nth-child(3) > a");
+		navigations.put("Logging", "ul#side-menu li:nth-child(5) > a");
 	}
 	
 	@Test
@@ -31,6 +31,7 @@ public class ChromeTestIT extends ChromeTestBase {
 		while(it.hasNext()){
 			Map.Entry pair = (Map.Entry)it.next();
 			waitAndClick( By.cssSelector( (String) pair.getValue() ) );
+			System.out.println("Current page: " + driver.getTitle());
 			Assert.assertEquals("IAF | " + pair.getKey(), driver.getTitle() );
 			it.remove();
 		}
