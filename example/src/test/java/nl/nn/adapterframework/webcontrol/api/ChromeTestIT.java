@@ -17,6 +17,14 @@ public class ChromeTestIT extends ChromeTestBase {
 	public ChromeTestIT() throws Exception {
 		navigations.put("Configurations", "ul#side-menu li:nth-child(3) > a");
 		navigations.put("Logging", "ul#side-menu li:nth-child(5) > a");
+		navigations.put("Test a PipeLine", "ul#side-menu li:nth-child(7) > a");
+		navigations.put("Test a ServiceListener","ul#side-menu li:nth-child(8) > a");
+		navigations.put("Webservices", "ul#side-menu li:nth-child(9) > a");
+		navigations.put("Scheduler", "ul#side-menu li:nth-child(10) > a");
+		navigations.put("Environment Variables", "ul#side-menu li:nth-child(11) > a");
+		navigations.put("Security Items", "ul#side-menu li:nth-child(13) > a");
+		
+		// TODO : JMS, JDBC, TESTING
 	}
 	
 	@Test
@@ -28,7 +36,7 @@ public class ChromeTestIT extends ChromeTestBase {
 	public void Navigation() throws Exception {
 		Iterator<Entry<String, String>> it = navigations.entrySet().iterator();
 		
-		while(it.hasNext()){
+		while( it.hasNext() ){
 			Map.Entry pair = (Map.Entry)it.next();
 			waitAndClick( By.cssSelector( (String) pair.getValue() ) );
 			System.out.println("Current page: " + driver.getTitle());
