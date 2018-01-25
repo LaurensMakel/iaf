@@ -28,6 +28,19 @@ public abstract class ChromeTestBase {
 		// Create new driver and open GUI 3.0
 		driver = new RemoteWebDriver(new URL(URL), caps);
 		driver.get("http://localhost:8080/iaf/gui/#/status");
+		// Set default settings!
+		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		caps.setCapability("platform", "Windows");
+		caps.setCapability("version", "43.0");
+		
+		if( System.getProperty("TRAVIS_JOB_NUMBER") != null ){
+			caps.setCapability("tunnel-identifier", System.getProperty("TRAVIS_JOB_NUMBER"));
+		}
+		
+		driver = new RemoteWebDriver(new URL(URL), caps);
+		driver.get("http://127.0.0.1:8080/iaf/gui/#/status");
+		
+		System.out.println("Source of webpage : " + driver.getPageSource() );
 	}
 	
 	@After
