@@ -113,7 +113,7 @@
         <executions>
 	        <execution>
 	            <id>start-jetty</id>
-	            <phase>pre-integration-test</phase>
+	            <phase>pre-unit-test</phase>
 	            <goals>
 	                <goal>start</goal>
 	            </goals>
@@ -124,7 +124,7 @@
 	        </execution>
 	        <execution>
 	            <id>stop-jetty</id>
-	            <phase>post-integration-test</phase>
+	            <phase>post-unit-test</phase>
 	            <goals>
 	                <goal>stop</goal>
 	            </goals>
