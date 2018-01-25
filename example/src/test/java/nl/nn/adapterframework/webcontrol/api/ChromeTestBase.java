@@ -27,6 +27,8 @@ public abstract class ChromeTestBase {
 		
 		if( System.getProperty("TRAVIS_JOB_NUMBER") != null ){
 			caps.setCapability("tunnel-identifier", System.getProperty("TRAVIS_JOB_NUMBER"));
+			System.out.println(System.getProperty("TRAVIS_JOB_NUMBER"));
+			System.out.println("Travis_JOB_NUMBER");
 		}
 		
 		driver = new RemoteWebDriver(new URL(URL), caps);
