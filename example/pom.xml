@@ -97,13 +97,6 @@
               <value>LOC</value>
             </systemProperty>
             <systemProperty>
-<<<<<<< HEAD
-              <name>jdbc.realm</name>
-              <value>jdbc</value>
-            </systemProperty>
-            <systemProperty>
-=======
->>>>>>> 7570fbf2bf014f9c5a769a50d1d9094874ea6245
               <name>jdbc.convertFieldnamesToUppercase</name>
               <value>true</value>
             </systemProperty>

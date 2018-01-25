@@ -20,14 +20,6 @@ public abstract class ChromeTestBase {
 
 	@Before
 	public void initDriver() throws Exception {
-		// Set default settings
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
-		caps.setCapability("platform", "Windows");
-		caps.setCapability("version", "43.0");
-
-		// Create new driver and open GUI 3.0
-		driver = new RemoteWebDriver(new URL(URL), caps);
-		driver.get("http://localhost:8080/iaf/gui/#/status");
 		// Set default settings!
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
 		caps.setCapability("platform", "Windows");
