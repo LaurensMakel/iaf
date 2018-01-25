@@ -3,6 +3,7 @@ package nl.nn.adapterframework.webcontrol.api;
 import java.net.URL;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
@@ -19,7 +20,7 @@ public abstract class ChromeTestBase {
 	private static final String AUTOMATE_KEY = "d835004c-97a1-4e52-b63f-daa5b1d3d3fd";
 	private static String URL = "https://"+ USERNAME + ":" + AUTOMATE_KEY +  "@ondemand.saucelabs.com:443/wd/hub";
 
-	@Before
+	@BeforeClass
 	public void initDriver() throws Exception {
 		// Set default settings!
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
@@ -37,7 +38,7 @@ public abstract class ChromeTestBase {
 		System.out.println("Source of webpage : " + driver.getPageSource() );
 	}
 	
-	@After
+	@AfterClass
 	public void quit() throws Exception {
 		driver.quit();
 	}
